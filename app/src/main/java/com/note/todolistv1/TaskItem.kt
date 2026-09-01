@@ -38,7 +38,6 @@ fun TaskItem(
 ) {
     var isExpanded by remember { mutableStateOf(false) }
     var isEditing by remember { mutableStateOf(false) }
-
     var draftText by remember(task.text) { mutableStateOf(task.text) }
 
     TaskCard {
