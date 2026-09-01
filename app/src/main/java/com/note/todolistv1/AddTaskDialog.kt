@@ -17,11 +17,10 @@ fun AddTaskDialog(
     onDismiss: () -> Unit,
     onConfirm: (String) -> Unit
 ) {
-    // Local state to hold what the user is typing
     var taskText by remember { mutableStateOf("") }
 
     AlertDialog(
-        onDismissRequest = onDismiss, // Closes dialog
+        onDismissRequest = onDismiss,
         title = { Text("Add New Task") },
         text = {
             OutlinedTextField(
@@ -40,7 +39,6 @@ fun AddTaskDialog(
         confirmButton = {
             TextButton(
                 onClick = {
-                    // Only add if the text is not empty
                     if (taskText.isNotBlank()) {
                         onConfirm(taskText)
                     }

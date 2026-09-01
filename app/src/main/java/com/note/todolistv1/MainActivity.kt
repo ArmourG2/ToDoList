@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         if (showSettings) {
-                            // --- Settings Screen Top Bar ---
+                            // Settings Screen Top Bar
                             TopAppBar(
                                 title = { Text("Settings") },
                                 navigationIcon = {
@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             )
                         } else {
-                            // --- Main Screen Top Bar ---
+                            // Main Screen Top Bar
                             TopAppBar(
                                 title = { Text("My To-Do List") },
                                 actions = {

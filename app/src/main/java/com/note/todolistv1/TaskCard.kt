@@ -11,16 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-/**
- * A reusable visual container for task rows.
- *
- * This file does not know about Task data.
- * It only provides the card design:
- * - rounded corners
- * - border
- * - slight elevation
- * - Material theme background
- */
 @Composable
 fun TaskCard(
     modifier: Modifier = Modifier,

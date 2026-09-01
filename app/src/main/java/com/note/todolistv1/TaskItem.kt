@@ -36,12 +36,9 @@ fun TaskItem(
     onDelete: () -> Unit,
     onSaveEdit: (String) -> Unit
 ) {
-    // Local UI state for this item only.
     var isExpanded by remember { mutableStateOf(false) }
     var isEditing by remember { mutableStateOf(false) }
 
-    // Temporary text used while editing.
-    // remember(task.text) resets the draft if the real task text changes.
     var draftText by remember(task.text) { mutableStateOf(task.text) }
 
     TaskCard {
@@ -50,15 +47,12 @@ fun TaskItem(
                 .fillMaxWidth()
                 .padding(12.dp)
         ) {
-            // Top row: task text or edit field + checkbox
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable(enabled = !(isExpanded && isEditing)) {
                         isExpanded = !isExpanded
 
-                        // If the item is collapsed, stop editing
-                        // and discard any unfinished edit text.
                         if (!isExpanded) {
                             isEditing = false
                             draftText = task.text
